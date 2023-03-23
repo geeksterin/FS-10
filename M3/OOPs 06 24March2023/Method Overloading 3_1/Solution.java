@@ -11,13 +11,6 @@ class YTVideo{
     int commentsCount;  //n
     ArrayList<String> comments;
 
-//     song: 
-// artist: 
-// views: 
-// likes:  
-// releasedYear: 
-// n:
-// comments: 
     YTVideo(String song, String artist, int views, int likes, int year, int commentsCount, ArrayList<String> comments){
         this.song = song;
         this.artist = artist;
