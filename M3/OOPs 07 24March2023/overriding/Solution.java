@@ -1,32 +1,16 @@
 import java.util.*;
 class YTVideo{
     String song;
-    String artist;
     int views;
-    int likes;
-    int year;
-    int commentsCount;  //n
-    ArrayList<String> comments;
+    
 
-    YTVideo(String song, String artist, int views, int likes, int year, int commentsCount, ArrayList<String> comments){
+    YTVideo(String song, int views){
         this.song = song;
-        this.artist = artist;
         this.views = views;
-        this.likes = likes;
-        this.year = year;
-        this.commentsCount = commentsCount;
-        this.comments = comments;
     }
-    void printInfoYT(){
+    void printInfo(){
         System.out.println(song);
-        System.out.println(artist);
         System.out.println(views);
-        System.out.println(likes);
-        System.out.println(year);
-        System.out.println(commentsCount);
-        for(String ele : comments){
-            System.out.println(ele);
-        }
     }
 }
 
@@ -34,22 +18,17 @@ class ShortVideo extends YTVideo{
     int time;
     int impressions;
 
-    ShortVideo(String song, String artist, int views, int likes, int year, int commentsCount, ArrayList<String> comments, int time, int impressions){
-        super(song, artist, views, likes, year, commentsCount, comments);
+    ShortVideo(String song, int views, int time, int impressions){
+        super(song, views);
         this.time = time;
         this.impressions  = impressions;
     }
 
-    void printInfoSV(){
+    void printInfo(){
         System.out.println(time);
         System.out.println(impressions);
     }
-     void printInfoSV(int x){
-
-        System.out.println(x);
-        System.out.println(time);
-        System.out.println(impressions);
-    }
+    
 
    
 }
