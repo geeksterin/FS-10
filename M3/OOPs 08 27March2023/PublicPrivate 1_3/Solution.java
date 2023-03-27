@@ -17,7 +17,9 @@ class YTVideo{
 }
 
 class ShortVideo extends YTVideo{
+    // ShortVideo (){
 
+    // }
 }
 
 
