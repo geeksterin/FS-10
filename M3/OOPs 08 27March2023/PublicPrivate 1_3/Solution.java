@@ -8,42 +8,16 @@ class YTVideo{
     public int year;
     public int commentsCount;  //n
     public ArrayList<String> comments;
-    private int impressions;
 
-    public void getImpressions(){
-        System.out.println(impressions);
-    }
-
-    private int calcRank(){
-        int sum = lieks + impressions;
-        if(sum > 10000)
-            return 1;
-        else if(sum > 5000)
-            return 2;
-        else if(sum > 1000)
-            return 3;
-        else if( likes == 0)
-            return 4;
-
-        return -1;
-    }
-
-    public void printRank(){
-        int rank = calcRank();
-        System.out.println(rank);
+    public void printTempRank(){
+        System.out.println("Method of youtubeVideo class. Also can not find the rank right now.");
     }
 
 
-    YTVideo(String song, String artist, int views, int likes, int year, int commentsCount, ArrayList<String> comments, int impressions){
-        this.song = song;
-        this.artist = artist;
-        this.views = views;
-        this.likes = likes;
-        this.year = year;
-        this.commentsCount = commentsCount;
-        this.comments = comments;
-        this.impressions = impressions;
-    }
+}
+
+class ShortVideo extends YTVideo{
+
 }
 
 
@@ -62,12 +36,8 @@ public class Solution{
             String s = scn.nextLine();
             comments.add(s);
         }
-        int impressions = scn.nextInt();
-
-
-        YTVideo obj = new YTVideo(song, artist, views, likes, year, commentsCount, comments, impressions);
-        obj.getImpressions();
-        obj.printRank();
+        ShortVideo sv = new ShortVideo();
+        sv.printTempRank();
 
     }
 }
