@@ -1,4 +1,4 @@
-package TicTacToe;
+// package tictactoe;
 
 public class Game{
 
@@ -24,7 +24,7 @@ public class Game{
     private void printBoard(){
         for(int i = 0; i < this.board.size; i++){
             for(int j = 0; j < board.size; j++){
-                System.out.print(board[i][j] + " ");
+                System.out.print(board.board[i][j] + " ");
             }
             System.out.println();
         }
