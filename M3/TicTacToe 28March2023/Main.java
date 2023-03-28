@@ -3,14 +3,20 @@ package TicTacToe;
 public class Main{
     public static void main(String [] args){
         Player A = new Player();
-        A.setName("Player 1");
+        A.setName("James");
         A.setSymbol('0');
-
         Player B = new Player();
-        B.setName("Player 2");
+        B.setName("Harry");
         B.setSymbol('X');
 
+
+        Player [] players = {A,B};
+
         Board board = new Board(3);
+        Game game = new Game(players, board);
+       
+        game.play();
+
 
         
     }
