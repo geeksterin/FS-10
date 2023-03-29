@@ -51,6 +51,7 @@ public class Game{
             //draw
             if(moves >= size*size){
                 System.out.println("Game Draw");
+                printBoard();
                 return;
             }
 
