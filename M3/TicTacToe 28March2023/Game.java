@@ -49,18 +49,21 @@ public class Game{
             board.matrix[x][y] = players[turn].getSymbol();
 
             //draw
-            if(moves == size*size){
+            if(moves >= size*size){
                 System.out.println("Game Draw");
                 return;
             }
 
             if(checkCombinations() == true){
                 //winner
+                gameOver = true;
+                printBoard();
+                System.out.println("Winner is : " + players[turn].getName);
+                return;
             }
 
-
-
-
+            turn = 1-turn;
+            printBoard();
         }
 
 
@@ -108,9 +111,48 @@ public class Game{
                 return true;
             }
         } 
-        
+
+        //col wise direction 2
+        for(int j = 0; j < n; j++){
+            String pattern  = "";
+            for(int i = 0; i < n; i++){
+                pattern += board.matrix[i][j];
+            }
+            if(pattern.equals(zero) || patter.equals(cross)){
+                return true;
+            }
+        } 
+
+        //diag direction 3
+        String pattern  = "";
+        int i = 0;
+        int j = 0;
+        while(i < n){
+            pattern += board.matrix[i][j];
+            i++;
+            j++;
+        }
+
+        if(pattern.equals(zero) || patter.equals(cross)){
+            return true;
+        }
+
+         //anti diag direction 4
+        pattern  = "";
+        i = 0;
+        j = n-1;
+        while(i < n){
+            pattern += board.matrix[i][j];
+            i++;
+            j--;
+        }
+
+        if(pattern.equals(zero) || patter.equals(cross)){
+            return true;
+        }
 
 
+        return false;
     }
 
 
