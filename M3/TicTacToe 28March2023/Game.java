@@ -1,5 +1,5 @@
 // package tictactoe;
-
+import java.util.*;
 
 public class Game{
 
@@ -30,7 +30,7 @@ public class Game{
     private void printBoard(){
         for(int i = 0; i < this.board.size; i++){
             for(int j = 0; j < board.size; j++){
-                System.out.print(board.maxtrix[i][j] + " ");
+                System.out.print(board.matrix[i][j] + " ");
             }
             System.out.println();
         }
@@ -58,7 +58,7 @@ public class Game{
                 //winner
                 gameOver = true;
                 printBoard();
-                System.out.println("Winner is : " + players[turn].getName);
+                System.out.println("Winner is : " + players[turn].getName());
                 return;
             }
 
@@ -74,8 +74,8 @@ public class Game{
         while(true){
             System.out.println("Player : " + players[turn].getName() + "which position(x,y) do you want to insert?");
             Scanner scn = new Scanner(System.in);
-            int x = sc.nextInt();
-            int y = sc.nextInt();
+            int x = scn.nextInt();
+            int y = scn.nextInt();
             
 
             if(x < 0 || y < 0 || x >= board.size || y >= board.size){
@@ -95,7 +95,6 @@ public class Game{
 
             return new int[]{x,y};
         }
-        return new int[]{0};
     }
 
     private boolean checkCombinations(){
@@ -107,7 +106,7 @@ public class Game{
             for(int j = 0; j < n; j++){
                 pattern += board.matrix[i][j];
             }
-            if(pattern.equals(zero) || patter.equals(cross)){
+            if(pattern.equals(zero) || pattern.equals(cross)){
                 return true;
             }
         } 
@@ -118,7 +117,7 @@ public class Game{
             for(int i = 0; i < n; i++){
                 pattern += board.matrix[i][j];
             }
-            if(pattern.equals(zero) || patter.equals(cross)){
+            if(pattern.equals(zero) || pattern.equals(cross)){
                 return true;
             }
         } 
@@ -133,7 +132,7 @@ public class Game{
             j++;
         }
 
-        if(pattern.equals(zero) || patter.equals(cross)){
+        if(pattern.equals(zero) || pattern.equals(cross)){
             return true;
         }
 
@@ -147,7 +146,7 @@ public class Game{
             j--;
         }
 
-        if(pattern.equals(zero) || patter.equals(cross)){
+        if(pattern.equals(zero) || pattern.equals(cross)){
             return true;
         }
 
