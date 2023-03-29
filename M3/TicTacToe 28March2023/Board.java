@@ -2,7 +2,7 @@
 
 public class Board{
     int size;
-    char [][] board;
+    char [][] matrix;
 
     public Board(int size){
         this.size = size;
