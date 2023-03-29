@@ -73,7 +73,7 @@ public class Game{
 
     private int [] getIndex(){
         while(true){
-            System.out.println("Player : " + players[turn].getName() + "which position(x,y) do you want to insert?");
+            System.out.println("Player : " + players[turn].getName() + " which position(x,y) do you want to insert?");
             Scanner scn = new Scanner(System.in);
             int x = scn.nextInt();
             int y = scn.nextInt();
