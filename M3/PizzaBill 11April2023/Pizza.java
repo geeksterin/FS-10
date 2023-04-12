@@ -1,5 +1,5 @@
 public class Pizza{
-    private int price;
+    protected int price;
     private boolean isVeg;      //default false
     private int basePrice;
 
@@ -10,6 +10,9 @@ public class Pizza{
     private boolean extraToppingAdded;      //true
     private boolean extraCheeseAdded;
     private boolean foodPacked;
+
+    private int discount = 0;
+    private boolean isDiscountApplied;
 
 
 
@@ -26,7 +29,8 @@ public class Pizza{
     }
 
     public void generateBill(){
-        double taxApplied = calculateTax();
+         double taxApplied = calculateTax();
+         discount();
 
         System.out.println("<------Pizza Bill------>");
         StringBuilder sb = new StringBuilder();
@@ -48,8 +52,11 @@ public class Pizza{
         }
         sb.append("\nTotal Amount without tax : " + price);
         sb.append("\nTax : " + taxApplied);
+        if(isDiscountApplied){
+            sb.append("\nDiscount Applied : " + discount);
+        }
         sb.append("\nAmount Payable : ");
-        sb.append(price + taxApplied);
+        sb.append(price + taxApplied - discount);
         sb.append("\nEnjoy your meal !!");
 
 
@@ -76,6 +83,13 @@ public class Pizza{
         //12 % 
         double tax = (0.12 * price);
         return tax;
+    }
+
+    public void discount(){
+        if(price > 500){
+            isDiscountApplied = true;
+            discount = 80;
+        }
     }
 
 }

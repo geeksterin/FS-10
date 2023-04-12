@@ -5,7 +5,6 @@ public class PremiumPizza extends Pizza{
         super.addExtraCheese();
         super.addExtraTopping();
     }
-
     public void addExtraTopping(){
         System.out.println("***!Warning*** -> Extra Topping Already added");
     }
@@ -14,12 +13,11 @@ public class PremiumPizza extends Pizza{
         System.out.println("***!Warning*** -> Extra Cheese Already added");
     }
 
-    //Task1: Over Ride calculateTax() // 18%
-    
-
-
-
-    // Task 2 --> override generateBill()
+    public double calculateTax(){
+        //18 % 
+        double tax = (0.18 * price);
+        return tax;
+    }
 
 
 }
